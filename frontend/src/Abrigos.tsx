@@ -1,20 +1,20 @@
 import Row from "react-bootstrap/esm/Row";
-import { BreadcrumbNav } from "./Components/BreadCrumbNav";
+import { BreadCrumbNav } from "./Components/BreadCrumbNav";
 import { Header } from "./Components/Header";
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import { Footer } from "./Components/Footer";
-import { APIProvider } from "@vis.gl/react-google-maps";
+import { MapPoa } from "./Components/MapPoa";
 
 export function Abrigos() {
   return (
     <>
       <Header />
-      <BreadcrumbNav />
+      <BreadCrumbNav />
       <main>
         <Container>
-          <Row className="mb-5">
-            <Col>
+          <Row className="mb-5 align-items-center ">
+            <Col xs={12} lg={6}>
               <h1 className="mb-5">Bem-vindo ao nosso Mapa de Abrigos!</h1>
               <p>
                 Navegue pela cidade e encontre os abrigos que estão oferecendo
@@ -23,7 +23,7 @@ export function Abrigos() {
                 você encontre o mais próximo de você ou da área de necessidade.
               </p>
               <p>
-                Ao clicar nos marcadores, você terá acesso a informações
+                Ao clicar nos ícones de abrigo, você terá acesso a informações
                 importantes sobre cada abrigo, incluindo os materiais essenciais
                 que estão sendo solicitados. Isso permite que você faça doações
                 direcionadas, garantindo que as necessidades específicas de cada
@@ -36,7 +36,9 @@ export function Abrigos() {
                 daqueles que precisam de ajuda.
               </p>
             </Col>
-            <Col></Col>
+            <Col xs={12} style={{ height: "50vh" }} lg={6}>
+              <MapPoa />
+            </Col>
           </Row>
           <Footer />
         </Container>
